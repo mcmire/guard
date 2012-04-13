@@ -131,8 +131,8 @@ describe Guard::CLI do
 
   describe '#version' do
     it 'shows the current version' do
-      ui.should_not_receive(:info).with(/#{ ::Guard::VERSION }/)
-      subject.list
+      ui.should_receive(:info).with(/#{ ::Guard::VERSION }/)
+      subject.version
     end
 
     context 'when running with Bundler' do
